@@ -1,0 +1,53 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Bienvenido a tu EPS Virtual Salud VIKIRIA:</h3>
+        </div>
+        <div class="card-body">
+            <form action="/notes/new-note" method="POST">
+
+                <div class="form-group">Elige la especialidad *</div>
+                <div class="form-group">
+                   
+                    <select name="title" class="form-control"  autofocus >
+
+                        <option>General</option>
+
+                        <option>Pediatría</option>
+
+                        <option>Odontología</option>
+                    </select>
+                </div>
+ 
+                <div class="form-group">
+                
+                    <input type="text" name="description"  class="form-control" placeholder="# de celular" >
+                </div>
+
+                <div class="form-group">
+                    <select name="hour" class="form-control" style="text-align: center;" >
+
+                        <option selected>Horarios disponibles</option>
+                        <option>Martes 23 de Julio | 06:00 </option>
+                        <option>Martes 23 de Julio | 07:00 </option>
+                        <option>Martes 23 de Julio | 08:00 </option>
+                        <option>Martes 23 de Julio | 09:00 </option>
+                        <option>Martes 23 de Julio | 10:00 </option>
+                        <option>Martes 23 de Julio | 11:00</option>
+                        <option>Martes 23 de Julio | 12:00 </option>
+                        <option>Martes 23 de Julio | 13:00 </option>
+                        <option>Martes 23 de Julio | 14:00 </option>
+                        <option>Martes 23 de Julio | 15:00 </option>
+                        <option>Martes 23 de Julio | 16:00</option>
+                        <option>Martes 23 de Julio | 17:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Pedir cita
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<style>
+    .div_servicios {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        margin-bottom: 10%;
+
+    }
+
+    .servicio img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+    }
+
+    .cabezera_servicios {
+        text-align: center;
+        margin-top: 2%;
+       
+    }
+
+    .item_servicios {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .servicio {
+        padding: 1.8vw;
+        text-align: center;
+        transition: box-shadow .4s;
+    }
+
+    .servicio a p{
+        margin-top: 3vh;
+        font-size: 16pt;
+    }
+
+    .servicio a{
+        text-align: none;
+        color: black;
+    }
+
+    .servicio img:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.582);
+    }
+</style>
+<div class="div_servicios">
+    <div class="cabezera_servicios">
+        <h1>Servicios en línea</h1>
+        <p>Tu salud es lo primero, por eso te ofrecemos opciones fáciles y rápidas de cada uno de nuestros servicios:
+        </p>
+
+    </div>
+    <div class="item_servicios">
+        <div class="servicio"><a href="/users/signin"><img src="/servicios_media/doctor.jpg" alt=""> <p>Citas medicas</p> </a></div>
+        <div class="servicio"><a href="/users/signin"><img src="/servicios_media/autorizaciones.jpg" alt=""><p>Autorizaciones medicas</p> </a></div>
+        <div class="servicio"><a onclick="proximamente()" href=""><img src="/servicios_media/laboratorio.jpg" alt=""><p>Laboratorio clinico | <b style="color: red;">Proximamente</b> </p> </a></div>
+        <div class="servicio"><a href="/users/signin"><a href=""><img src="/servicios_media/historial.jpg" alt=""><p>Historial de citas</p> </a> </div>
+        <div class="servicio"><a onclick="proximamente()" href=""><img src="/servicios_media/preparacion.jpg" alt=""><p>Preparación exámenes |<b style="color: red;">Proximamente</b> </p> </a></div>
+    </div>
+</div>
+
+<script>
+
+    function proximamente (){
+        alert('Opción NO disponible');
+    }
+</script>

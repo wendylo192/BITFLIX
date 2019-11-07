@@ -1,0 +1,567 @@
+/*------------Cuerpo------------------*/
+@font-face {
+    font-family: 'tarponmotelregular';
+    src: url('/fuente/tarponmotel-webfont.woff2') format('woff2'),
+         url('/fuente/tarponmotel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+.body-index {
+    /* background-image: url("/media/img_bit.png");  FONDO */
+    background-image: url("https://i.pinimg.com/originals/f0/62/2a/f0622ac0165c399b5b2937c99ac0671d.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 7% 5% 0 5%;
+    font-family: 'tarponmotelregular', sans-serif;
+}
+
+/*------------Cierre / Cuerpo------------------*/
+
+/*-----------HEADER / LOGIN - BUSQUEDA------------*/
+
+.icon-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.icon-logo-2 {
+    width: 30px;
+    height: 30px;
+}
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+   
+}
+
+
+
+
+.App-header {
+    
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    
+    margin-top: 2%;
+    margin-bottom: 1%;
+    
+}
+
+.link_home{
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+.div_icon{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+#div_icon a{
+    
+    color: black;
+    text-decoration: none;
+}
+
+
+.div_login {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  
+}
+
+#btn-ingresar {
+    box-sizing: border-box;
+    padding: 5%;
+    text-decoration: none;
+    color: black;
+    font-size: 10pt;
+}
+
+#btn-ingresar:hover {
+    background-color: #ffdea659;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#btn-registrar {
+    box-sizing: border-box;
+    padding: 5%;
+    margin-left: 1vw;
+    text-decoration: none;
+    color: black;
+    font-size: 10pt;
+}
+
+#btn-registrar:hover {
+    background-color: #ffdea659;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+
+
+/*-----------CIERRE / HEADER / LOGIN - BUSQUEDA------------*/
+
+
+/*-----------NAVEGACIÓN------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#btn-menu {
+    display: none;
+}
+
+.div-nav label {
+    cursor: pointer;
+    display: none;
+}
+
+.div-nav {
+    margin-bottom: 0%;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.185); 
+    border-radius: 10px;
+    
+    
+}
+
+.menu ul {
+    font-size: 15pt;
+    background: #ffdfa6;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-bottom: .5%;
+    height: 9vh;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 19pt;
+}
+
+.menu ul ul {
+    display: none;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+   
+}
+
+.menu a:hover {
+    border-top: solid 1px rgba(0, 0, 255, 0.582);
+}
+
+.menu a span {
+    margin-left: 5px;
+}
+
+.menu ul li:hover ul {
+    display: block;
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .App {
+        min-height: 100vh;
+    }
+    .App-header {
+        height: 12vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .div-nav {
+        position: relative;
+    }
+    .div-nav label {
+        display: flex;
+        height: 8vh;
+        align-items: center;
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-150%);
+        transition: all 0.3s;
+        width: 100%;
+    }
+    .menu ul {
+        display: block;
+        background: #ffdfa6;
+        text-align: center;
+    }
+    .menu ul li:hover ul {
+        display: none;
+        position: static;
+    }
+    .menu a span {
+        position: absolute;
+        right: 10px;
+    }
+    #btn-menu:checked~.menu {
+        transform: translate(0%)
+    }
+    .menu ul ul {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    .menu ul ul a {
+        padding: 15px 40px;
+    }
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+
+/*-----------CIERRE / NAVEGACIÓN------------*/
+
+
+/*-------------------SLIDER------------------------*/
+
+#div_slider {
+
+    height: 500px;
+    margin-bottom: .5%;
+    margin-top: -.5%;
+}
+
+/*
+
+#div_slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate;
+    animation-timing-function: step-end;
+}
+
+#div_slider li {
+    width: 100%;
+    list-style: none;
+}
+
+#div_slider img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+
+*/
+
+/*---------------CIERRE / SLIDER-------------------------*/
+
+
+/*---------------------DIV INFO----------------------------------*/
+
+.div_info {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background: white;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.colum {
+    flex: 2%;
+    max-width: 24%;
+}
+
+@media (max-width: 800px) {
+    .div_info {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        padding: 1%;
+    }
+    .column {
+        flex: 100%;
+        max-width: 100%;
+        height: 20vh;
+    }
+    #info1 {
+        min-width: 100%;
+        margin-bottom: 1%;
+    }
+    #info2 {
+        min-width: 100%;
+        margin-bottom: 1%;
+    }
+    #info3 {
+        min-width: 100%;
+        margin-bottom: 1%;
+    }
+    #info4 {
+        min-width: 100%;
+        margin-bottom: 1%;
+        padding-top: 1.5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+#info1 {
+    background: #ffdfa6;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 30pt;
+    padding: 2%;
+    transition: box-shadow .4s;
+}
+
+#info1:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.582); 
+}
+#info1 a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+#info2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    box-sizing: border-box;
+    background: #ffdfa6;
+    font-size: 20pt;
+    border-radius: 10px;
+}
+
+
+
+#info2 a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.div_link {
+    
+    
+    border: 1px solid #fff4e1fd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 9%;
+    transition: box-shadow .4s;
+    
+}
+
+.div_link .title-long {
+    font-size: 14pt;
+}
+
+.div_link:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.582); 
+}
+
+#info3 {
+    background: #ffdfa6;
+    box-sizing: border-box;
+    
+}
+
+#info4 {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 10% 45%;
+    background: #ffdfa6;
+    box-sizing: border-box;
+    font-size: 20pt;
+    text-align: center;
+}
+
+
+#info4 a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+
+
+.div_link2 {
+   
+    display: flex;
+   
+    border: 1px solid #fff4e1fd;
+    border-radius: 10px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.div_link3 {
+   
+    display: flex;
+    border: 1px solid #fff4e1fd;
+    border-radius: 10px;
+    margin: 5% ;
+    transition: box-shadow .5s;
+    
+  
+    
+}
+
+
+#info4 .div_link3 a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 11%;
+    
+}
+.div_link3:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.582); 
+}
+
+/*---------------------CIERRE DIV INFO---------------------------*/
+
+/*-----------------------Botones de Servicios---------------------------*/
+
+#div_servicios{
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#div_servicios button{
+    background-color: #fff4e131;
+    padding: 16px 32px;
+    text-align: center;
+    color: black; 
+    border: 2px solid #008CBA;
+    font-size: 16pt;
+}
+
+#div_servicios button:hover{
+    background-color: #008CBA;
+  color: white;
+}
+
+/*-----------------------Botones de Servicios---------------------------*/
+
+
+/*------------------FOOTER------------------------*/
+
+#footer {
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    height: 45vh;
+    background: #ffdfa6;
+    margin-top: 1%;
+    align-items: center;
+ 
+}
+
+#div_enlaces{
+    box-sizing: border-box;
+    margin: 5% 15% 5% 15%;
+    text-align: center;
+    
+}
+
+
+
+.img_footer{
+    width: 150px;
+    height: 35px;
+    margin-bottom: 5vh;
+}
+
+#div_contacto{
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 6vh;
+
+  
+}
+
+
+
+#div_derechos{
+    box-sizing: border-box;
+    margin: 5% 10% 5% 10%;
+    text-align: center;
+    line-height: 5vh;
+    
+}
+
+.info_contacto{
+    font-family: sans-serif;
+    font-size: 13pt;
+}
+
+/*------------------CIERRE / FOOTER------------------------*/
+
+
+.div_signin{
+    -webkit-box-shadow: 0px -11px 71px 44px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -11px 71px 44px rgba(0,0,0,0.75);
+    box-shadow: 0px -11px 71px 44px rgba(0,0,0,0.75);
+}

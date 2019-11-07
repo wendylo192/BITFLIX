@@ -1,0 +1,49 @@
+<div>
+    <header class="App-header">
+        <div id="div_icon"><a class="link_home" href="/"><img class="icon-logo" src="/media/logo-2.png"  alt="">&nbsp;&nbsp;EPS VIKIRIA</a></div>
+
+        {{#if user}}
+        <a class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mi Perfil
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/notes">Citas</a>
+                <a class="dropdown-item" href="/notes/add">Nueva cita</a>
+                <a class="dropdown-item" href="#">Certificados</a>
+                <a class="dropdown-item" href="#">Inscribir beneficiario</a>
+                <hr>
+                <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
+            </div>
+        </a>
+           
+        {{else}}
+
+        <div class="div_login">
+
+             <a href="/users/signin" id="btn-ingresar"><img class="icon-logo-2" src="/media/signin-icon.png"
+                    alt="">&nbsp; INGRESAR</a>
+            <a href="/users/signup" id="btn-registrar"><img class="icon-logo-2" src="/media/signup-icon.png"
+                    alt="">&nbsp; REGISTRO</a>
+
+        </div>
+        {{/if}}
+
+
+        
+    </header>
+
+    <div class="div-nav">
+        <input type="checkbox" id="btn-menu"></input>
+        <label for="btn-menu" class="icon-menu"></label>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li class="submenu"><a href="/fitoterapia">Fitoterapia</a></li>
+                <li class="submenu"><a href="/servicios">Servicios</a></li>
+                <li><a href="http://localhost:3001">Farmacia virtual</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
