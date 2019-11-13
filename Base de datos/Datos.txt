@@ -1,0 +1,16 @@
+Administrator
+administrator@gmail.com
+Adming123*
+
+Usuario Lite
+pruebas_lite@gmail.com
+Lite123*
+
+Usuario Premium
+pruebas_premium@gmail.com
+Premium123*
+
+
+-----------------------------------------------------------------------
+comando para importar desde cmd a mongo 
+mongoimport --db BITFLIX --collection users --file c:\archivo.json
