@@ -8,7 +8,9 @@
 
 }
 
-
+.row {
+    font-family: 'Poppins';
+}
 
 
 .body-index {
@@ -571,6 +573,20 @@
 }
 
 .metPagoLargo{
-    width: 120px;
-    height: 50px;
+    width: 125px;
+}
+
+.card-header {
+    background-color: #523549 !important;
+}
+.card{
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+
+.textoBlanco {
+    color: white;
+}
+
+.flotarLeft{
+ float: left;   
 }
