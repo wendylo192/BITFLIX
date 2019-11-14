@@ -25,17 +25,54 @@
 
 </head>
 
-<body class="body-index">
-
+<body >
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<header _ngcontent-bjg-c1=""><ul _ngcontent-bjg-c1="" class="menu"><li _ngcontent-bjg-c1=""><a _ngcontent-bjg-c1="" href="#!" id="logo"><img _ngcontent-bjg-c1="" alt="Logo" src="/media/logoBITflex.png"></a></li><li _ngcontent-bjg-c1=""><a _ngcontent-bjg-c1="" routerlink="/home" ng-reflect-router-link="/home" href="/home">Home</a></li><li _ngcontent-bjg-c1=""><a _ngcontent-bjg-c1="" routerlink="/quienes-somos" ng-reflect-router-link="/quienes-somos" href="/quienes-somos">Quíenes Somos?</a></li><li _ngcontent-bjg-c1=""><a _ngcontent-bjg-c1="" routerlink="/contenido" ng-reflect-router-link="/contenido" href="/contenido">Contenido</a></li><li _ngcontent-bjg-c1=""><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><a _ngcontent-bjg-c1="" href="http://localhost:3002/users/signin">Iniciar Sesión</a><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></li><li _ngcontent-bjg-c1=""><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><a _ngcontent-bjg-c1="" class="boton" href="http://localhost:3002/users/signup" ng-reflect-router-link="/pasar-premium" href="/pasar-premium">Pásate a Premium</a><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></li></ul>
+</header>
   
 
-    <main >
+    <main class="body-index" >
         {{>messages}}
         {{> errors}}
         {{{body}}}
     </main>
 
- 
+ <div class="footer">
+    <div class="contFooter">
+        <div class='itemBF'>
+            <span style="font-size: 2vw;">Contáctanos</span>
+            <img src="/media/logoBITflexbl.png" alt="BITFlix" width="120vw">
+            <span>Calle 106a # 17a - 46 Edificio BIT</span>
+            <span>Tel: +57 375 23 44</span>
+            <span>Correo: servicioalcliente@bitflix.com</span>
+
+            <div class="redes">
+                <img src="/media/facebook.png" alt="FB" width="10vw">
+                <img src="/media/in.png" alt="IN" width="20vw">
+                <img src="/media/twitter.png" alt="T" width="20vw">
+                <img src="/media/instagram.png" alt="Insta" width="20vw">
+            </div>
+
+        </div>
+
+        <div class='itemfrase'>
+            <span class="frase">Descubre BITFlix Premium, tu lugar de entretenimiento</span>
+        </div>
+
+        <div class='itemMLAB'>
+            <a>Desarrollado por</a>
+            <div> <img src="/media/MLAB.png" alt="" height="90vw"> </div>
+        </div>
+    </div>
+</div>
 
     <!--SCRIPTS-->
 
