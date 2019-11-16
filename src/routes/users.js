@@ -1,15 +1,19 @@
 const express = require('express');
+const UserController = require('../controllers/user');//cargamos el fichero user.js
 const router = express.Router();
 const User = require('../models/User');
 const passport = require('passport');
 router.get('/users/signin', (req, res) => {
     res.render('users/signin');
 });
-router.post('/users/signin', passport.authenticate('local', {
+ /* router.post('/users/signin', passport.authenticate('local', {
     successRedirect: '/notes',
     failureRedirect: '/users/signin',
     failureFlash: true
-}));
+}));  */
+
+router.post('/users/signin', UserController.loginUser);
+
 router.get('/users/signup', (req, res) => {
     res.render('users/signup');
 });

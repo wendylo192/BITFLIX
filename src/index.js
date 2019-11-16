@@ -5,10 +5,16 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const bodyParser = require('body-parser') //Info http://bit.ly/2Iy6hQJ
+
 // Initialition
 const app = express();
+const cors = require('cors')
+
 require('./database');
 require('./config/passport');
+
+app.use(cors())
 // Settings
 
 app.set('port', process.env.PORT || 3002);
@@ -60,3 +66,17 @@ app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
     
 })
+
+
+/* Avoid CORS error*/
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
+app.use(bodyParser.urlencoded({extended:false})) // necesario para que funcione bodyParser
+app.use(bodyParser.json()) // Convertir en JSON los datos que llegan por medio de peticiones
+
