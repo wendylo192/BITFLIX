@@ -41,4 +41,4 @@ function eliminarPelicula (req, res, next) {
     .catch(next);
 };
 
-module.exports = {peliculaController, crearPelicula, obtenerPelicula, actualizarPelicula, eliminarPelicula}
+module.exports = {peliculaController, crearPelicula, obtenerPelicula, actualizarPelicula, eliminarPelicula, obtenerPeliculas}
