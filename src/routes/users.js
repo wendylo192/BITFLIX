@@ -1,10 +1,24 @@
 const express = require('express');
-const UserController = require('../controllers/user');//cargamos el fichero user.js
+//const UserController = require('../controllers/user');//cargamos el fichero user.js
 const router = express.Router();
 const User = require('../models/User');
 const passport = require('passport');
 router.get('/users/signin', (req, res) => {
-    res.render('users/signin');
+    console.log(req.body)
+
+    User.findOne({email:req.body.email},(error,user)=>{
+        if(error){
+            res.status(500).send({message:"error en el servidor"})
+        }else{
+            if(!user){
+                res.status(200).send({message:"el usuario no existe"})
+            }else{
+                res.status(200).send({user:user})
+            }
+        }
+    })
+
+    //res.render('users/signin');
 });
  /* router.post('/users/signin', passport.authenticate('local', {
     successRedirect: '/notes',
@@ -12,7 +26,7 @@ router.get('/users/signin', (req, res) => {
     failureFlash: true
 }));  */
 
-router.post('/users/signin', UserController.loginUser);
+//router.post('/users/signin', UserController.loginUser);
 
 router.get('/users/signup', (req, res) => {
     res.render('users/signup');
