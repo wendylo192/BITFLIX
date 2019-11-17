@@ -29,7 +29,8 @@ app.engine('.hbs', exphbs ({
 app.set('view engine', '.hbs');
 
 //Middlewares
-app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'mysecretapp',
@@ -70,13 +71,10 @@ app.listen(app.get('port'), () => {
 
 /* Avoid CORS error*/
 app.use((req, res, next) => {
+    res.header("Content-Type",'application/json');
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
-
-app.use(bodyParser.urlencoded({extended:false})) // necesario para que funcione bodyParser
-app.use(bodyParser.json()) // Convertir en JSON los datos que llegan por medio de peticiones
-

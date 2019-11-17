@@ -1,8 +1,9 @@
 const express = require('express');
-//const UserController = require('../controllers/user');//cargamos el fichero user.js
+const UserController = require('../controllers/user');//cargamos el fichero user.js
 const router = express.Router();
 const User = require('../models/User');
 const passport = require('passport');
+
 router.get('/users/signin', (req, res) => {
     console.log(req.body)
 
@@ -26,7 +27,7 @@ router.get('/users/signin', (req, res) => {
     failureFlash: true
 }));  */
 
-//router.post('/users/signin', UserController.loginUser);
+router.post('/users/signin', UserController.loginUser);
 
 router.get('/users/signup', (req, res) => {
     res.render('users/signup');
