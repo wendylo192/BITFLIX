@@ -13,6 +13,6 @@ const peliculasSchema = new Schema({
   ruta_video: {type: String},
  });
 
- const peliculas = mongoose.model("peliculas", peliculasSchema);
+ const peliculas = mongoose.model("movies", peliculasSchema);
 
 module.exports = peliculas;
