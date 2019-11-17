@@ -6,32 +6,24 @@ const passport = require('passport');
 
 router.get('/users/signin', (req, res) => {
     console.log(req.body)
-
-    User.findOne({email:req.body.email},(error,user)=>{
-        if(error){
-            res.status(500).send({message:"error en el servidor"})
-        }else{
-            if(!user){
-                res.status(200).send({message:"el usuario no existe"})
-            }else{
-                res.status(200).send({user:user})
-            }
-        }
-    })
-
-    //res.render('users/signin');
 });
- /* router.post('/users/signin', passport.authenticate('local', {
+
+router.get('/users/signin', (req, res) => {
+    res.render('users/signin');
+});
+
+router.post('/users/signin', passport.authenticate('local', {
     successRedirect: '/notes',
     failureRedirect: '/users/signin',
     failureFlash: true
-}));  */
+}));
 
 router.post('/users/signin', UserController.loginUser);
 
 router.get('/users/signup', (req, res) => {
     res.render('users/signup');
 });
+
 router.post('/users/signup', async(req, res) => {
     const { name, email, password, confirm_password, role } = req.body;
     const errors = [];
