@@ -5,10 +5,16 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const bodyParser = require('body-parser') //Info http://bit.ly/2Iy6hQJ
+
 // Initialition
 const app = express();
+const cors = require('cors')
+
 require('./database');
 require('./config/passport');
+
+app.use(cors())
 // Settings
 
 app.set('port', process.env.PORT || 3002);
@@ -51,7 +57,6 @@ app.use((req, res, next) =>{
 app.use(require('./routes/index'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
-app.use(require('./routes/pelicula'));
 
 //Static Files
 
