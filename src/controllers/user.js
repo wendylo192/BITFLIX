@@ -206,13 +206,62 @@ function getImageFile(req, res){
     
 }
 
+//  METODO PARA EL LOGIN
+async function createUser(req, res) {
+
+    var user = new User();
+    user.email = req.body["email"];
+    user.password = await user.encryptPassword(req.body["password"]);
+    user.role = req.body["role"];
+    user.name = req.body["name"];
+
+    User.findOne({ email: user.email.toLowerCase() }, (err, users) => {
+        console.log ("USER", user);
+        if (users) {
+            res.send({ message: 'El usuario ya existe' });
+        } else {
+            user.save((err, userStored) => { //guardamos el nuevo documento en la DB 'agregar a la colección que tenemos'
+                if (err) {
+                    res.send({ message: 'Error al guardar el usuario' });
+                } else {
+                    if (!userStored) {
+                        res.send({ message: 'No se ha registrado el usuario' });
+                    } else {
+                        res.send({ user: userStored });
+                    }
+                }
+            });
+        }
+    })
+}
+
+function updateUserReal (req, res) {
+    var userId = req.body.id;
+    var update = { role:  req.body.role };
+
+    User.findByIdAndUpdate(userId, update, (err, userUpdated) => {
+        if (err) { 
+            res.send({ message: 'No se ha podido actualizar el usuario' }); 
+        } else {
+            if (!userUpdated) {
+                res.send({ message: 'No se ha podido actualizar el usuario' });
+            } else {
+                res.send({ user: userUpdated });
+            }
+        }
+    });
+
+}
+
 module.exports = {
     pruebas,
     saveUser,
     loginUser,
     updateUser,
     uploadImage,
-    getImageFile
+    getImageFile,
+    createUser,
+    updateUserReal
 };
 
 
